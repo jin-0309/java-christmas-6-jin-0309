@@ -92,32 +92,6 @@
     <td>예약 클래스 입니다.</td>
   </tr>
   <tr>
-    <td rowspan="3">model.repository</td>
-    <td>UserRepository</td>
-    <td>유저 repository 입니다.</td>
-  </tr>
-  <tr>
-    <td>MenuRepository</td>
-    <td>메뉴 repository 입니다.</td>
-  </tr>
-  <tr>
-    <td>ReservationRepository</td>
-    <td>예약 repository 입니다.</td>
-  </tr>
-  <tr>
-    <td rowspan="3">mode.service</td>
-    <td>ReservationService</td>
-    <td>예약 service 입니다.</td>
-  </tr>
-  <tr>
-    <td>MenuService</td>
-    <td>메뉴 service 입니다.</td>
-  </tr>
-  <tr>
-    <td>UserService</td>
-    <td>유저 service 입니다.</td>
-  </tr>
-  <tr>
     <td>model.event</td>
     <td>Event</td>
     <td>이벤트 interface 입니다.</td>
@@ -134,6 +108,32 @@
   <tr>
     <td>StarDayEvent</td>
     <td>별이 달린 날짜 이벤트 입니다.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">repository</td>
+    <td>UserRepository</td>
+    <td>유저 repository 입니다.</td>
+  </tr>
+  <tr>
+    <td>MenuRepository</td>
+    <td>메뉴 repository 입니다.</td>
+  </tr>
+  <tr>
+    <td>ReservationRepository</td>
+    <td>예약 repository 입니다.</td>
+  </tr>
+  <tr>
+    <td rowspan="3">service</td>
+    <td>ReservationService</td>
+    <td>예약 service 입니다.</td>
+  </tr>
+  <tr>
+    <td>MenuService</td>
+    <td>메뉴 service 입니다.</td>
+  </tr>
+  <tr>
+    <td>UserService</td>
+    <td>유저 service 입니다.</td>
   </tr>
   <tr>
     <td rowspan="2">view</td>
