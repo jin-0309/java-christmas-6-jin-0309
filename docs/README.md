@@ -147,7 +147,7 @@
   </tr>
   <tr>
     <td rowspan="7">utils</td>
-    <td>MenuKindInfo</td>
+    <td>MenuCategoryInfo</td>
     <td>메뉴 들의 정보를 담고 있는 enum 입니다.</td>
   </tr>
   <tr>
