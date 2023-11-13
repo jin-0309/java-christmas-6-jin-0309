@@ -20,8 +20,8 @@ public class MenuRepository {
         return menuRepository;
     }
 
-    public void addMenu(int menuId, Menu menu) {
-        menus.put(menuId, menu);
+    public void add(Menu menu) {
+        menus.put(menu.menuId(), menu);
     }
 
     public Menu findById(int menuId) {

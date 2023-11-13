@@ -15,9 +15,8 @@ public class UserService {
     }
 
     public User createUser(String name) {
-        int id = nextUserId.getAndIncrement();
-        User user = new User(id, name);
-        userRepository.addUser(user.userId(), user);
+        User user = new User(nextUserId.getAndIncrement(), name);
+        userRepository.add(user);
         return user;
     }
 

@@ -5,17 +5,16 @@ import christmas.repository.MenuRepository;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MenuService {
-    private AtomicInteger nextMenuId = new AtomicInteger(1);
+    private final AtomicInteger nextMenuId = new AtomicInteger(1);
     private final MenuRepository menuRepository;
 
     public MenuService(MenuRepository menuRepository) {
         this.menuRepository = menuRepository;
     }
 
-    public Menu createMenu(String name, int price) {
-        int id = nextMenuId.getAndIncrement();
-        Menu menu = new Menu(id, name, price);
-        menuRepository.addMenu(menu.menuId(), menu);
+    public Menu createMenu(String name, int price, String category) {
+        Menu menu = new Menu(nextMenuId.getAndIncrement(), name, price, category);
+        menuRepository.add(menu);
         return menu;
     }
 

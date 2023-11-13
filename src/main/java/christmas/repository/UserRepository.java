@@ -18,8 +18,8 @@ public class UserRepository {
         return userRepository;
     }
 
-    public void addUser(int userId, User user) {
-        users.put(userId, user);
+    public void add(User user) {
+        users.put(user.userId(), user);
     }
 
     public User findById(int id) {

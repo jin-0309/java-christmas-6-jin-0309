@@ -7,14 +7,14 @@
 
 # 기능목록
 
-- [ ] 프로그램 시작 시 식당 메뉴를 초기화 합니다.
-    - [ ] 에피타이저
+- [x] 프로그램 시작 시 식당 메뉴를 초기화 합니다.
+    - [x] 에피타이저
         - 양송이수프(6,000), 타파스(5,500), 시저샐러드(8,000)
-    - [ ] 메인
+    - [x] 메인
         - 티본스테이크(55,000), 바비큐립(54,000), 해산물파스타(35,000), 크리스마스파스타(25,000)
-    - [ ] 디저트
+    - [x] 디저트
         - 초코케이크(15,000), 아이스크림(5,000)
-    - [ ] 음료
+    - [x] 음료
         - 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
 - [ ] 사용자에게 식당 예상 방문 날짜 입력 받습니다.
     - 방문할 날짜는 1 이상 31 이하의 숫자로만 입력 받습니다.
@@ -146,13 +146,29 @@
     <td>출력 처리를 진행 하는 view 입니다.</td>
   </tr>
   <tr>
-    <td rowspan="3">utils</td>
-    <td>MenuMessage</td>
+    <td rowspan="7">utils</td>
+    <td>MenuKindInfo</td>
     <td>메뉴 들의 정보를 담고 있는 enum 입니다.</td>
   </tr>
   <tr>
+    <td>AppetizerMenuInfo</td>
+    <td>에피타이저 메뉴 정보를 담고 있는 enum 입니다.</td>
+  </tr>
+    <tr>
+        <td>MainMenuInfo</td>
+        <td>메인 메뉴 정보를 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>DessertMenuInfo</td>
+        <td>디저트 메뉴 정보를 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>BeveragesMenuInfo</td>
+        <td>음료 메뉴 정보를 담고 있는 enum 입니다.</td>
+    </tr>
+  <tr>
     <td>PlannerMessage</td>
-    <td>planner 메시지 들의 정보를 담고 있는 enum 입니다.</td>
+    <td>planner 메시지 들을 담고 있는 enum 입니다.</td>
   </tr>
   <tr>
     <td>ErrorMessage</td>
@@ -171,4 +187,9 @@
     <td>InvalidOrderException</td>
     <td>유효하지 않은 주문 예외</td>
   </tr>
+    <tr>
+        <td>config</td>
+        <td>AppConfig</td>
+        <td>앱 실행 시 초기화 되는 초기 설정 입니다.</td>
+    </tr>
 </table>
