@@ -71,8 +71,8 @@
   </tr>
   <tr>
     <td>controller</td>
-    <td>EventPlannerController</td>
-    <td>이벤트 플래너 컨트롤러 입니다. 뷰와 모델을 연결합니다.</td>
+    <td>WootecoRestaurantController</td>
+    <td>우테코 레스토랑 컨트롤러 입니다. 뷰와 모델을 연결합니다.</td>
   </tr>
   <tr>
     <td rowspan="4">model</td>
@@ -105,6 +105,11 @@
     <td>예약 repository 입니다.</td>
   </tr>
   <tr>
+    <td>mode.service</td>
+    <td>ReservationService</td>
+    <td>예약 service 입니다.</td>
+  </tr>
+  <tr>
     <td>model.event</td>
     <td>Event</td>
     <td>이벤트 interface 입니다.</td>
@@ -125,16 +130,20 @@
   <tr>
     <td rowspan="2">view</td>
     <td>InputView</td>
-    <td>입력 처리를 진행하는 view 입니다.</td>
+    <td>입력 처리를 진행 하는 view 입니다.</td>
   </tr>
   <tr>
     <td>OutputView</td>
-    <td>출력 처리를 진행하는 view 입니다.</td>
+    <td>출력 처리를 진행 하는 view 입니다.</td>
   </tr>
   <tr>
-    <td rowspan="2">utils</td>
-    <td>Menu</td>
+    <td rowspan="3">utils</td>
+    <td>MenuMessage</td>
     <td>메뉴 들의 정보를 담고 있는 enum 입니다.</td>
+  </tr>
+  <tr>
+    <td>PlannerMessage</td>
+    <td>planner 메시지 들의 정보를 담고 있는 enum 입니다.</td>
   </tr>
   <tr>
     <td>ErrorMessage</td>
