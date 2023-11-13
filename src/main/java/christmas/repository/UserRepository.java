@@ -1,20 +1,28 @@
 package christmas.repository;
 
 import christmas.model.User;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserRepository {
-    private final List<User> users = new ArrayList<>();
+    private static UserRepository userRepository = null;
+    private final Map<Integer, User> users = new HashMap<>();
 
-    public void addUser(User user) {
-        users.add(user);
+    private UserRepository() {
     }
 
-    public Optional<User> findById(int id) {
-        return users.stream()
-                .filter(user -> user.getUserID() == id)
-                .findFirst();
+    public static UserRepository getInstance() {
+        if (userRepository == null) {
+            userRepository = new UserRepository();
+        }
+        return userRepository;
+    }
+
+    public void addUser(int userId, User user) {
+        users.put(userId, user);
+    }
+
+    public User findById(int id) {
+        return users.get(id);
     }
 }
