@@ -105,9 +105,17 @@
     <td>예약 repository 입니다.</td>
   </tr>
   <tr>
-    <td>mode.service</td>
+    <td rowspan="3">mode.service</td>
     <td>ReservationService</td>
     <td>예약 service 입니다.</td>
+  </tr>
+  <tr>
+    <td>MenuService</td>
+    <td>메뉴 service 입니다.</td>
+  </tr>
+  <tr>
+    <td>UserService</td>
+    <td>유저 service 입니다.</td>
   </tr>
   <tr>
     <td>model.event</td>
