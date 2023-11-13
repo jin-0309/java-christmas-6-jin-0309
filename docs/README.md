@@ -16,7 +16,7 @@
         - 초코케이크(15,000), 아이스크림(5,000)
     - [x] 음료
         - 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
-- [ ] 사용자에게 식당 예상 방문 날짜 입력 받습니다.
+- [x] 사용자에게 식당 예상 방문 날짜 입력 받습니다.
     - 방문할 날짜는 1 이상 31 이하의 숫자로만 입력 받습니다.
     - 1 이상 31 이하의 숫자가 아닐 경우 "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 라는 에러 메시지가 출력됩니다.
 - [ ] 사용자에게 주문할 메뉴와 개수를 입력 받습니다.
@@ -151,9 +151,9 @@
     <td>메뉴 들의 정보를 담고 있는 enum 입니다.</td>
   </tr>
   <tr>
-    <td>AppetizerMenuInfo</td>
-    <td>에피타이저 메뉴 정보를 담고 있는 enum 입니다.</td>
-  </tr>
+        <td>AppetizerMenuInfo</td>
+        <td>에피타이저 메뉴 정보를 담고 있는 enum 입니다.</td>
+    </tr>
     <tr>
         <td>MainMenuInfo</td>
         <td>메인 메뉴 정보를 담고 있는 enum 입니다.</td>
@@ -166,27 +166,31 @@
         <td>BeveragesMenuInfo</td>
         <td>음료 메뉴 정보를 담고 있는 enum 입니다.</td>
     </tr>
-  <tr>
-    <td>PlannerMessage</td>
-    <td>planner 메시지 들을 담고 있는 enum 입니다.</td>
-  </tr>
-  <tr>
-    <td>ErrorMessage</td>
-    <td>에러 메시지 들을 담고 있는 enum 입니다.</td>
-  </tr>
-  <tr>
-    <td rowspan="3">Exception</td>
-    <td>CustomException</td>
-    <td>커스텀 예외 입니다.</td>
-  </tr>
-  <tr>
-    <td>InvalidDateException</td>
-    <td>유효하지 않은 날짜 예외</td>
-  </tr>
-  <tr>
-    <td>InvalidOrderException</td>
-    <td>유효하지 않은 주문 예외</td>
-  </tr>
+    <tr>
+        <td>PlannerMessage</td>
+        <td>planner 메시지 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>ErrorMessage</td>
+        <td>에러 메시지 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td rowspan="4">Exception</td>
+        <td>CustomException</td>
+        <td>커스텀 예외 입니다.</td>
+    </tr>
+    <tr>
+        <td>InvalidDateException</td>
+        <td>유효하지 않은 날짜 예외</td>
+    </tr>
+    <tr>
+        <td>InvalidOrderException</td>
+        <td>유효하지 않은 주문 예외</td>
+    </tr>
+    <tr>
+        <td>InvalidNumberInputException</td>
+        <td>숫자 입력 시 문자열을 입력할 경우 예외</td>
+    </tr>
     <tr>
         <td>config</td>
         <td>AppConfig</td>

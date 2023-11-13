@@ -1,5 +1,6 @@
 package christmas.config;
 
+import christmas.controller.WootecoRestaurantController;
 import christmas.repository.MenuRepository;
 import christmas.repository.ReservationRepository;
 import christmas.repository.UserRepository;
@@ -11,6 +12,8 @@ import christmas.utils.BeveragesMenuInfo;
 import christmas.utils.DessertMenuInfo;
 import christmas.utils.MainMenuInfo;
 import christmas.utils.MenuCategoryInfo;
+import christmas.view.InputView;
+import christmas.view.OutputView;
 
 public class AppConfig {
     private final MenuService menuService;
@@ -23,6 +26,11 @@ public class AppConfig {
         this.menuService = new MenuService(MenuRepository.getInstance());
         this.reservationService = new ReservationService(ReservationRepository.getInstance());
         this.userService = new UserService(UserRepository.getInstance());
+    }
+
+    public WootecoRestaurantController getController() {
+        return new WootecoRestaurantController(menuService, userService, reservationService, new InputView(),
+                new OutputView());
     }
 
     public void menuInit() {
