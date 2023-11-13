@@ -1,4 +1,4 @@
-package christmas.model.repository;
+package christmas.repository;
 
 import christmas.model.User;
 import java.util.ArrayList;
