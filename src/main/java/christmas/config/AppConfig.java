@@ -26,16 +26,32 @@ public class AppConfig {
     }
 
     public void menuInit() {
+        appetizerMenuInti();
+        mainMenuInti();
+        dessertMenuInit();
+        beveragesMenuInit();
+    }
+
+    public void appetizerMenuInti() {
         for (AppetizerMenuInfo appetizer : AppetizerMenuInfo.values()) {
             menuService.createMenu(appetizer.getMessage(), appetizer.getPrice(),
                     MenuCategoryInfo.APPETIZER.getMessage());
         }
+    }
+
+    public void mainMenuInti() {
         for (MainMenuInfo main : MainMenuInfo.values()) {
             menuService.createMenu(main.getMessage(), main.getPrice(), MenuCategoryInfo.MAIN.getMessage());
         }
+    }
+
+    public void dessertMenuInit() {
         for (DessertMenuInfo dessert : DessertMenuInfo.values()) {
             menuService.createMenu(dessert.getMessage(), dessert.getPrice(), MenuCategoryInfo.DESSERT.getMessage());
         }
+    }
+
+    public void beveragesMenuInit() {
         for (BeveragesMenuInfo beverages : BeveragesMenuInfo.values()) {
             menuService.createMenu(beverages.getMessage(), beverages.getPrice(),
                     MenuCategoryInfo.BEVERAGES.getMessage());
