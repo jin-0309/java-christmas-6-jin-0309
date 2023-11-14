@@ -19,7 +19,7 @@ public class UserRepository {
     }
 
     public void add(User user) {
-        users.put(user.userId(), user);
+        users.put(user.getUserId(), user);
     }
 
     public User findById(int id) {

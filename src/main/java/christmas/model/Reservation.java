@@ -11,6 +11,7 @@ public class Reservation {
     private Order order;
     private LocalDate reservationDate;
     private List<Event> events;
+    private Menu gift;
 
     public Reservation(int reservationId, int userId, Order order, LocalDate reservationDate) {
         this.reservationId = reservationId;
@@ -18,6 +19,7 @@ public class Reservation {
         this.order = order;
         this.reservationDate = reservationDate;
         this.events = new ArrayList<>();
+        this.gift = null;
     }
 
     public LocalDate getReservationDate() {
@@ -39,4 +41,17 @@ public class Reservation {
     public int getReservationId() {
         return this.reservationId;
     }
+
+    public List<Event> getEvents() {
+        return this.events;
+    }
+
+    public void setGift(Menu gift) {
+        this.gift = gift;
+    }
+
+    public Menu getGift() {
+        return this.gift;
+    }
+
 }
