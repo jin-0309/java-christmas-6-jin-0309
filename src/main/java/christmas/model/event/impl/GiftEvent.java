@@ -4,6 +4,7 @@ import christmas.model.Reservation;
 import christmas.model.event.Event;
 import christmas.utils.BeveragesMenuInfo;
 import christmas.utils.DiscountConstants;
+import christmas.utils.EventInfo;
 import christmas.utils.PlannerNumber;
 
 public class GiftEvent implements Event {
@@ -21,6 +22,11 @@ public class GiftEvent implements Event {
     @Override
     public int getDiscount() {
         return this.discount;
+    }
+
+    @Override
+    public String getEventName() {
+        return EventInfo.GIFT_EVENT.getMessage();
     }
 
     public static String getGiftId() {

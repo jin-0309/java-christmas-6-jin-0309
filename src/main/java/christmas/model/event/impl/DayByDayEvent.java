@@ -3,6 +3,7 @@ package christmas.model.event.impl;
 import christmas.model.Reservation;
 import christmas.model.event.Event;
 import christmas.utils.DiscountConstants;
+import christmas.utils.EventInfo;
 import java.time.LocalDate;
 
 public class DayByDayEvent implements Event {
@@ -21,6 +22,11 @@ public class DayByDayEvent implements Event {
     @Override
     public int getDiscount() {
         return this.discount;
+    }
+
+    @Override
+    public String getEventName() {
+        return EventInfo.DAY_BY_DAY_EVENT.getMessage();
     }
 
     private boolean validateDayByDayDate(LocalDate date) {

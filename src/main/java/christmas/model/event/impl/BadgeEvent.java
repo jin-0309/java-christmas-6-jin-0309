@@ -5,6 +5,7 @@ import christmas.model.Reservation;
 import christmas.model.event.Event;
 import christmas.utils.BadgeInfo;
 import christmas.utils.DiscountConstants;
+import christmas.utils.EventInfo;
 
 public class BadgeEvent implements Event {
     private final int discount = DiscountConstants.DISCOUNT_NONE.getIndex();
@@ -31,6 +32,11 @@ public class BadgeEvent implements Event {
     @Override
     public int getDiscount() {
         return this.discount;
+    }
+
+    @Override
+    public String getEventName() {
+        return EventInfo.BADGE_EVENT.getMessage();
     }
 
     public Badge getBadge() {

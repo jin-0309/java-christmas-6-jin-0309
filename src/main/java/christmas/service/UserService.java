@@ -20,6 +20,9 @@ public class UserService {
         return user;
     }
 
+    public void add(User user) {
+        userRepository.add(user);
+    }
 
     public User findById(int userId) {
         return userRepository.findById(userId);

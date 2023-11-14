@@ -3,6 +3,7 @@ package christmas.model.event.impl;
 import christmas.model.Reservation;
 import christmas.model.event.Event;
 import christmas.utils.DiscountConstants;
+import christmas.utils.EventInfo;
 import christmas.utils.StarDateInfo;
 import java.util.Arrays;
 
@@ -21,5 +22,10 @@ public class StarDayEvent implements Event {
     @Override
     public int getDiscount() {
         return this.discount;
+    }
+
+    @Override
+    public String getEventName() {
+        return EventInfo.SPECIAL_EVENT.getMessage();
     }
 }

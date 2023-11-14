@@ -45,7 +45,7 @@ public class WootecoRestaurantController {
     }
 
     public void run() {
-        User user = userService.createUser("wooteco");
+        User user = userService.findById(1);
         outputView.printHello();
         LocalDate date = createReservationDate();
         Order order = repeatValidate(() -> orderService.createOrder(inputView.readOrder()));

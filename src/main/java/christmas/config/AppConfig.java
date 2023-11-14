@@ -1,6 +1,7 @@
 package christmas.config;
 
 import christmas.controller.WootecoRestaurantController;
+import christmas.model.User;
 import christmas.model.event.impl.BadgeEvent;
 import christmas.model.event.impl.DayByDayEvent;
 import christmas.model.event.impl.GiftEvent;
@@ -40,6 +41,8 @@ public class AppConfig {
         this.userService = new UserService(UserRepository.getInstance());
         this.orderService = new OrderService(this.menuService);
         this.eventManager = new EventManager();
+        User user = new User(1, "wooteco");
+        userService.add(user);
     }
 
     public WootecoRestaurantController getController() {

@@ -4,6 +4,7 @@ import christmas.model.Order;
 import christmas.model.Reservation;
 import christmas.model.event.Event;
 import christmas.utils.DiscountConstants;
+import christmas.utils.EventInfo;
 import christmas.utils.MenuCategoryInfo;
 import java.time.DayOfWeek;
 
@@ -26,5 +27,10 @@ public class WeekendEvent implements Event {
     @Override
     public int getDiscount() {
         return this.discount;
+    }
+
+    @Override
+    public String getEventName() {
+        return EventInfo.WEEKEND_EVENT.getMessage();
     }
 }

@@ -6,4 +6,6 @@ public interface Event {
     int getDiscount();
 
     Event condition(Reservation reservation);
+
+    String getEventName();
 }
