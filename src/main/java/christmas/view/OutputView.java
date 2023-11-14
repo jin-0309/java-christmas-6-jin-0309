@@ -63,7 +63,8 @@ public class OutputView {
             System.out.println(PlannerMessage.NONE.getMessage() + PlannerMessage.NEWLINE.getMessage());
             return;
         }
-        System.out.println(converterMoney(Math.negateExact(reservation.getTotalDiscount())) + PlannerMessage.NEWLINE);
+        System.out.println(
+                converterMoney(Math.negateExact(reservation.getTotalDiscount())) + PlannerMessage.NEWLINE.getMessage());
     }
 
     public void printAfterTotalPrice(Reservation reservation) {

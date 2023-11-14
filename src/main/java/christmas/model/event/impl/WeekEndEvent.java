@@ -1,6 +1,5 @@
 package christmas.model.event.impl;
 
-import christmas.model.Order;
 import christmas.model.Reservation;
 import christmas.model.event.Event;
 import christmas.utils.DiscountConstants;
@@ -16,9 +15,11 @@ public class WeekEndEvent implements Event {
     public WeekEndEvent condition(Reservation reservation) {
         DayOfWeek dayOfWeek = reservation.getReservationDate().getDayOfWeek();
         if (dayOfWeek == DayOfWeek.FRIDAY || dayOfWeek == DayOfWeek.SATURDAY) {
-            Order order = reservation.getOrder();
-            int count = order.getCountByCategory(MenuCategoryInfo.MAIN.getMessage());
+            int count = reservation.getOrder().getCountByCategory(MenuCategoryInfo.MAIN.getMessage());
             discount = count * DiscountConstants.DISCOUNT_MAIN.getIndex();
+            if (discount == 0) {
+                return null;
+            }
             return this;
         }
         return null;
