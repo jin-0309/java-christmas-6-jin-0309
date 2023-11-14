@@ -2,6 +2,7 @@ package christmas.view;
 
 import christmas.model.Menu;
 import christmas.model.Reservation;
+import christmas.model.event.Event;
 import christmas.utils.PlannerMessage;
 import java.text.DecimalFormat;
 
@@ -21,8 +22,7 @@ public class OutputView {
 
     public void printOrderMenu(Reservation reservation) {
         System.out.println(PlannerMessage.ORDER_MENU.getMessage());
-        reservation.getOrder().getOrders()
-                .forEach((this::printOrderInfo));
+        reservation.getOrder().getOrders().forEach((this::printOrderInfo));
         System.out.println();
     }
 
@@ -40,6 +40,19 @@ public class OutputView {
         if (reservation.getGift() == null) {
             System.out.println(PlannerMessage.NONE.getMessage());
         }
+        System.out.println();
+    }
+
+    public void printBenefitHistory(Reservation reservation) {
+        System.out.println(PlannerMessage.BENEFIT_HISTORY.getMessage());
+        if (reservation.getEvents() == null) {
+            System.out.println(PlannerMessage.NONE.getMessage());
+        }
+        for (Event event : reservation.getEvents()) {
+            System.out.println(event.getEventName() + PlannerMessage.COLON.getMessage() + converterMoney(
+                    Math.negateExact(event.getDiscount())));
+        }
+        System.out.println();
     }
 
     public String converterMoney(int price) {

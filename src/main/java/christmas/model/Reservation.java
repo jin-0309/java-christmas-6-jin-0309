@@ -35,7 +35,9 @@ public class Reservation {
     }
 
     public void addEvent(Event event) {
-        this.events.add(event);
+        if (event != null) {
+            this.events.add(event);
+        }
     }
 
     public int getReservationId() {
