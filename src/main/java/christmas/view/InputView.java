@@ -7,8 +7,13 @@ import christmas.utils.PlannerMessage;
 public class InputView {
 
     public int readDate() {
-        System.out.println(PlannerMessage.HELLO.getMessage());
+        System.out.println(PlannerMessage.REQUEST_RESERVATION_DATE.getMessage());
         return validateNumber(Console.readLine());
+    }
+
+    public String readOrder() {
+        System.out.println(PlannerMessage.REQUEST_MENU_QUANTITY.getMessage());
+        return Console.readLine();
     }
 
     private int validateNumber(String input) {

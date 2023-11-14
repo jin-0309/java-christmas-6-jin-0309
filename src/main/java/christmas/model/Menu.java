@@ -1,5 +1,5 @@
 package christmas.model;
 
-public record Menu(int menuId, String name, int price, String category) {
+public record Menu(String name, int price, String category) {
 
 }

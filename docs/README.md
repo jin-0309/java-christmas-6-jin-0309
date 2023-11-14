@@ -19,7 +19,7 @@
 - [x] 사용자에게 식당 예상 방문 날짜 입력 받습니다.
     - 방문할 날짜는 1 이상 31 이하의 숫자로만 입력 받습니다.
     - 1 이상 31 이하의 숫자가 아닐 경우 "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 라는 에러 메시지가 출력됩니다.
-- [ ] 사용자에게 주문할 메뉴와 개수를 입력 받습니다.
+- [x] 사용자에게 주문할 메뉴와 개수를 입력 받습니다.
     - 고객이 메뉴판에 없는 메뉴를 입력할 경우, "[ERROR] 유효하지 않은 주문입니다. 다시 입력해주세요." 라는 에러 메시지가 출력됩니다.
     - 메뉴의 개수는 1 이상의 숫자만 입력 받습니다. 이외의 입력값은 "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요." 라는 메시지가 출력됩니다.
     - 메뉴 형식이 예시와 다를 경우, "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요." 라는 메시지가 출력됩니다.
@@ -76,7 +76,7 @@
     <td>우테코 레스토랑 컨트롤러 입니다. 뷰와 모델을 연결합니다.</td>
   </tr>
   <tr>
-    <td rowspan="4">model</td>
+    <td rowspan="5">model</td>
     <td>User</td>
     <td>사용자 record 입니다.</td>
   </tr>
@@ -92,6 +92,10 @@
     <td>Reservation</td>
     <td>예약 record 입니다.</td>
   </tr>
+    <tr>
+        <td>Order</td>
+        <td>주문 정보 클래스 입니다.</td>
+    </tr>
   <tr>
     <td>model.event</td>
     <td>Event</td>
@@ -124,7 +128,7 @@
     <td>예약 repository 입니다.</td>
   </tr>
   <tr>
-    <td rowspan="3">service</td>
+    <td rowspan="4">service</td>
     <td>ReservationService</td>
     <td>예약 service 입니다.</td>
   </tr>
@@ -136,6 +140,8 @@
     <td>UserService</td>
     <td>유저 service 입니다.</td>
   </tr>
+    <td>OrderService</td>
+    <td>주문 service 입니다.</td>
   <tr>
     <td rowspan="2">view</td>
     <td>InputView</td>

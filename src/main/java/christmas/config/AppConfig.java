@@ -5,6 +5,7 @@ import christmas.repository.MenuRepository;
 import christmas.repository.ReservationRepository;
 import christmas.repository.UserRepository;
 import christmas.service.MenuService;
+import christmas.service.OrderService;
 import christmas.service.ReservationService;
 import christmas.service.UserService;
 import christmas.utils.AppetizerMenuInfo;
@@ -22,14 +23,18 @@ public class AppConfig {
 
     private final UserService userService;
 
+    private final OrderService orderService;
+
     public AppConfig() {
         this.menuService = new MenuService(MenuRepository.getInstance());
         this.reservationService = new ReservationService(ReservationRepository.getInstance());
         this.userService = new UserService(UserRepository.getInstance());
+        this.orderService = new OrderService(this.menuService);
     }
 
     public WootecoRestaurantController getController() {
-        return new WootecoRestaurantController(menuService, userService, reservationService, new InputView(),
+        return new WootecoRestaurantController(menuService, userService, reservationService, orderService,
+                new InputView(),
                 new OutputView());
     }
 
