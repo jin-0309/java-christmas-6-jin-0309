@@ -256,4 +256,5 @@
 2. 다양한 예외 처리
 3. 이벤트 처리
 4. enum의 사용
-5. service-repository 구조
+5. service-repository
+6. 커밋 단위와 기능 목록 단위
