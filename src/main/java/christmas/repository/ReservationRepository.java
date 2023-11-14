@@ -20,7 +20,7 @@ public class ReservationRepository {
     }
 
     public void add(Reservation reservation) {
-        reservations.put(reservation.reservationId(), reservation);
+        reservations.put(reservation.getReservationId(), reservation);
     }
 
     public Reservation findById(int reservationId) {

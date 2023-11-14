@@ -32,4 +32,8 @@ public class Order {
                 .sum();
     }
 
+    public Map<Menu, Integer> getOrders() {
+        return this.orders;
+    }
+
 }
