@@ -78,19 +78,19 @@
     <tr>
         <td rowspan="5">model</td>
         <td>User</td>
-        <td>사용자 record 입니다.</td>
+        <td>사용자 클래스 입니다.</td>
+    </tr>
+    <tr>
+        <td>Badge</td>
+        <td>배지 레코드 입니다.</td>
     </tr>
     <tr>
         <td>Menu</td>
         <td>메뉴 record 입니다.</td>
     </tr>
     <tr>
-        <td>EventPlanner</td>
-        <td>이벤트 플래너 클래스 입니다.</td>
-    </tr>
-    <tr>
         <td>Reservation</td>
-        <td>예약 record 입니다.</td>
+        <td>예약 클래스 입니다.</td>
     </tr>
     <tr>
         <td>Order</td>
@@ -102,17 +102,29 @@
         <td>이벤트 interface 입니다.</td>
     </tr>
     <tr>
-        <td rowspan="3">model.event.impl</td>
+        <td rowspan="6">model.event.impl</td>
         <td>WeekendEvent</td>
-        <td>주말 할인 이벤트 입니다.</td>
+        <td>주말 할인 이벤트 클래스 입니다.</td>
     </tr>
     <tr>
         <td>WeekDayEvent</td>
-        <td>평일 할인 이벤트 입니다.</td>
+        <td>평일 할인 이벤트 클래스 입니다.</td>
     </tr>
     <tr>
         <td>StarDayEvent</td>
-        <td>별이 달린 날짜 이벤트 입니다.</td>
+        <td>별이 달린 날짜 이벤트 클래스 입니다.</td>
+    </tr>
+    <tr>
+        <td>GiftEvent</td>
+        <td>증정 이벤트 클래스 입니다.</td>
+    </tr>
+    <tr>
+        <td>DayByDayEvent</td>
+        <td>크리스마스 디데이 이벤트 클래스 입니다.</td>
+    </tr>
+    <tr>
+        <td>BadgeEvent</td>
+        <td>배지 증정 이벤트 클래스 입니다.</td>
     </tr>
     <tr>
         <td rowspan="3">repository</td>
@@ -128,13 +140,17 @@
         <td>예약 repository 입니다.</td>
     </tr>
     <tr>
-        <td rowspan="4">service</td>
+        <td rowspan="5">service</td>
         <td>ReservationService</td>
         <td>예약 service 입니다.</td>
     </tr>
     <tr>
         <td>MenuService</td>
         <td>메뉴 service 입니다.</td>
+    </tr>
+    <tr>
+        <td>EventPlanner</td>
+        <td>이벤트 플래너 클래스 입니다.</td>
     </tr>
     <tr>
         <td>UserService</td>
@@ -152,7 +168,7 @@
         <td>출력 처리를 진행 하는 view 입니다.</td>
     </tr>
     <tr>
-        <td rowspan="7">utils</td>
+        <td rowspan="14">utils</td>
         <td>MenuCategoryInfo</td>
         <td>메뉴 들의 정보를 담고 있는 enum 입니다.</td>
     </tr>
@@ -177,8 +193,36 @@
         <td>planner 메시지 들을 담고 있는 enum 입니다.</td>
     </tr>
     <tr>
-        <td>ErrorMessage</td>
+        <td>PlannerNumber</td>
+        <td>planner 숫자 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>ExceptionMessage</td>
         <td>에러 메시지 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>BadgeInfo</td>
+        <td>배지 정보 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>DateInfo</td>
+        <td>날짜 정보 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>DiscountConstants</td>
+        <td>할인 상수 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>EventInfo</td>
+        <td>이벤트 정보 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>OrderConstants</td>
+        <td>주문 상수 들을 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
+        <td>StarDateInfo</td>
+        <td>별이 있는 날짜 들을 관리 하고 있는 enum 입니다.</td>
     </tr>
     <tr>
         <td rowspan="4">Exception</td>
@@ -203,3 +247,13 @@
         <td>앱 실행 시 초기화 되는 초기 설정 입니다.</td>
     </tr>
 </table>
+
+---
+
+## 고민한 포인트들
+
+1. 객체지향, 유지보수와 확장성
+2. 다양한 예외 처리
+3. 이벤트 처리
+4. enum의 사용
+5. service-repository 구조
