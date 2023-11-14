@@ -1,11 +1,11 @@
 package christmas.service;
 
 import christmas.exception.InvalidDateException;
+import christmas.model.Order;
 import christmas.model.Reservation;
 import christmas.repository.ReservationRepository;
 import christmas.utils.PlannerNumber;
 import java.time.LocalDate;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ReservationService {
@@ -18,7 +18,7 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public Reservation createReservation(int userId, Map<Integer, Integer> orders, LocalDate reservationDate) {
+    public Reservation createReservation(int userId, Order orders, LocalDate reservationDate) {
         Reservation reservation = new Reservation(nextReservationId.getAndIncrement(), userId, orders, reservationDate);
         reservationRepository.add(reservation);
         return reservation;
