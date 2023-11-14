@@ -14,7 +14,7 @@ public class BadgeEvent implements Event {
     @Override
     public BadgeEvent condition(Reservation reservation) {
         int price = reservation.getTotalPrice();
-        if (price >= BadgeInfo.SANTA_BADGE.getPrice() && price < BadgeInfo.TREE_BADGE.getPrice()) {
+        if (price >= BadgeInfo.STAR_BADGE.getPrice() && price < BadgeInfo.TREE_BADGE.getPrice()) {
             this.badge = new Badge(BadgeInfo.STAR_BADGE.getValue());
             return this;
         }
@@ -23,7 +23,7 @@ public class BadgeEvent implements Event {
             return this;
         }
         if (price >= BadgeInfo.SANTA_BADGE.getPrice()) {
-            this.badge = new Badge(BadgeInfo.STAR_BADGE.getValue());
+            this.badge = new Badge(BadgeInfo.SANTA_BADGE.getValue());
             return this;
         }
         return null;

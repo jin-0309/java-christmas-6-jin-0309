@@ -1,15 +1,18 @@
 package christmas.controller;
 
 import christmas.exception.CustomException;
+import christmas.model.Badge;
 import christmas.model.Order;
 import christmas.model.Reservation;
 import christmas.model.User;
+import christmas.model.event.impl.BadgeEvent;
 import christmas.model.event.impl.GiftEvent;
 import christmas.service.EventManager;
 import christmas.service.MenuService;
 import christmas.service.OrderService;
 import christmas.service.ReservationService;
 import christmas.service.UserService;
+import christmas.utils.ExceptionMessage;
 import christmas.utils.PlannerNumber;
 import christmas.view.InputView;
 import christmas.view.OutputView;
@@ -33,8 +36,7 @@ public class WootecoRestaurantController {
 
     public WootecoRestaurantController(MenuService menuService, UserService userService,
                                        ReservationService reservationService, OrderService orderService,
-                                       EventManager eventManager,
-                                       InputView inputView, OutputView outputView) {
+                                       EventManager eventManager, InputView inputView, OutputView outputView) {
         this.menuService = menuService;
         this.userService = userService;
         this.reservationService = reservationService;
@@ -54,20 +56,34 @@ public class WootecoRestaurantController {
         outputView.printOrderMenu(reservation);
         outputView.printBeforeTotalPrice(reservation);
         eventManager.applyEvent(reservation);
-        showBenefit(reservation);
+        presentBadge(reservation, user);
+        showBenefit(reservation, user.getBadge());
+        reservationService.add(reservation);
+        userService.add(user);
     }
 
-    public void showBenefit(Reservation reservation) {
+    public void showBenefit(Reservation reservation, Badge badge) {
         presentGift(reservation);
         outputView.printGift(reservation);
         outputView.printBenefitHistory(reservation);
         outputView.printTotalBenefitPrice(reservation);
         outputView.printAfterTotalPrice(reservation);
+        outputView.printDecemberBadge(badge);
     }
 
     public void presentGift(Reservation reservation) {
         if (reservation.getEvents().stream().anyMatch(GiftEvent.class::isInstance)) {
             reservation.setGift(menuService.findById(GiftEvent.getGiftId()));
+        }
+    }
+
+    public void presentBadge(Reservation reservation, User user) {
+        if (reservation.getEvents().stream().anyMatch(BadgeEvent.class::isInstance)) {
+            user.setBadge(
+                    reservation.getEvents().stream().filter(BadgeEvent.class::isInstance).map(BadgeEvent.class::cast)
+                            .findFirst().orElseThrow(() -> new IllegalStateException(
+                                    ExceptionMessage.ERROR_PREFIX.getMessage() + ExceptionMessage.ILLEGAL_STATE.getMessage()))
+                            .getBadge());
         }
     }
 

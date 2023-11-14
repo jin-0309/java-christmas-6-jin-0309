@@ -34,4 +34,8 @@ public class ReservationService {
         }
     }
 
+    public void add(Reservation reservation) {
+        reservationRepository.add(reservation);
+    }
+
 }

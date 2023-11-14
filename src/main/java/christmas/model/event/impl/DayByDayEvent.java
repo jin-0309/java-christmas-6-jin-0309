@@ -15,6 +15,7 @@ public class DayByDayEvent implements Event {
         if (validateDayByDayDate(reservation.getReservationDate())) {
             int date = reservation.getReservationDate().getDayOfMonth() - 1;
             discount += (date * DiscountConstants.DISCOUNT_100.getIndex());
+            return this;
         }
         return null;
     }

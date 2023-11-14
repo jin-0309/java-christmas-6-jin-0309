@@ -1,5 +1,6 @@
 package christmas.view;
 
+import christmas.model.Badge;
 import christmas.model.Menu;
 import christmas.model.Reservation;
 import christmas.model.event.impl.BadgeEvent;
@@ -71,6 +72,16 @@ public class OutputView {
         System.out.println(PlannerMessage.TOTAL_AMOUNT_AFTER_DISCOUNT.getMessage());
         System.out.println(converterMoney(reservation.getTotalPrice() - reservation.getTotalDiscount())
                 + PlannerMessage.NEWLINE.getMessage());
+    }
+
+    public void printDecemberBadge(Badge badge) {
+        System.out.println(PlannerMessage.DECEMBER_EVENT_BADGE.getMessage());
+        if (badge == null) {
+            System.out.println(PlannerMessage.NONE.getMessage());
+        }
+        if (badge != null) {
+            System.out.println(badge.name());
+        }
     }
 
     public String converterMoney(int price) {

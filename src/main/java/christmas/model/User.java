@@ -20,4 +20,8 @@ public class User {
     public void setBadge(Badge badge) {
         this.badge = badge;
     }
+
+    public Badge getBadge() {
+        return this.badge;
+    }
 }
