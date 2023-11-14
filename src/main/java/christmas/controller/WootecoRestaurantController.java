@@ -62,6 +62,7 @@ public class WootecoRestaurantController {
         outputView.printGift(reservation);
         outputView.printBenefitHistory(reservation);
         outputView.printTotalBenefitPrice(reservation);
+        outputView.printAfterTotalPrice(reservation);
     }
 
     public void presentGift(Reservation reservation) {

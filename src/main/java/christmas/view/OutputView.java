@@ -66,6 +66,12 @@ public class OutputView {
         System.out.println(converterMoney(Math.negateExact(reservation.getTotalDiscount())) + PlannerMessage.NEWLINE);
     }
 
+    public void printAfterTotalPrice(Reservation reservation) {
+        System.out.println(PlannerMessage.TOTAL_AMOUNT_AFTER_DISCOUNT.getMessage());
+        System.out.println(converterMoney(reservation.getTotalPrice() - reservation.getTotalDiscount())
+                + PlannerMessage.NEWLINE.getMessage());
+    }
+
     public String converterMoney(int price) {
         DecimalFormat decimalFormat = new DecimalFormat(PlannerMessage.FORMAT_UNIT.getMessage());
         return decimalFormat.format(price);
