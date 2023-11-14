@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Reservation {
-    private int reservationId;
-    private int userId;
-    private Order order;
-    private LocalDate reservationDate;
-    private List<Event> events;
+    private final int reservationId;
+    private final int userId;
+    private final Order order;
+    private final LocalDate reservationDate;
+    private final List<Event> events;
     private Menu gift;
 
     public Reservation(int reservationId, int userId, Order order, LocalDate reservationDate) {
