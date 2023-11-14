@@ -56,4 +56,10 @@ public class Reservation {
         return this.gift;
     }
 
+    public int getTotalDiscount() {
+        return events.stream()
+                .mapToInt(Event::getDiscount)
+                .sum();
+    }
+
 }

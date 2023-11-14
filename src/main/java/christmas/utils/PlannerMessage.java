@@ -14,7 +14,8 @@ public enum PlannerMessage {
     DECEMBER_EVENT_BADGE("<12월 이벤트 배지>"),
     FORMAT_UNIT("#,###원"),
     NONE("없음"),
-    COLON(": ");
+    COLON(": "),
+    NEWLINE("\n");
 
     private final String message;
 

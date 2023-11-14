@@ -5,7 +5,8 @@ public enum PlannerNumber {
     DECEMBER_MAX_DATE(31),
     DECEMBER(12),
     THIS_YEAR(2023),
-    GIFT_LINE_PRICE(120000);
+    GIFT_LINE_PRICE(120000),
+    ZERO(0);
 
     private final int number;
 

@@ -8,12 +8,12 @@ import christmas.utils.EventInfo;
 import christmas.utils.MenuCategoryInfo;
 import java.time.DayOfWeek;
 
-public class WeekendEvent implements Event {
+public class WeekEndEvent implements Event {
 
     private int discount;
 
     @Override
-    public WeekendEvent condition(Reservation reservation) {
+    public WeekEndEvent condition(Reservation reservation) {
         DayOfWeek dayOfWeek = reservation.getReservationDate().getDayOfWeek();
         if (dayOfWeek == DayOfWeek.FRIDAY || dayOfWeek == DayOfWeek.SATURDAY) {
             Order order = reservation.getOrder();

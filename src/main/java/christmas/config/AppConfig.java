@@ -7,7 +7,7 @@ import christmas.model.event.impl.DayByDayEvent;
 import christmas.model.event.impl.GiftEvent;
 import christmas.model.event.impl.StarDayEvent;
 import christmas.model.event.impl.WeekDayEvent;
-import christmas.model.event.impl.WeekendEvent;
+import christmas.model.event.impl.WeekEndEvent;
 import christmas.repository.MenuRepository;
 import christmas.repository.ReservationRepository;
 import christmas.repository.UserRepository;
@@ -89,7 +89,7 @@ public class AppConfig {
         this.eventManager.addEvent(new DayByDayEvent());
         this.eventManager.addEvent(new GiftEvent());
         this.eventManager.addEvent(new StarDayEvent());
-        this.eventManager.addEvent(new WeekendEvent());
+        this.eventManager.addEvent(new WeekEndEvent());
         this.eventManager.addEvent(new WeekDayEvent());
     }
 

@@ -3,12 +3,11 @@ package christmas.model.event.impl;
 import christmas.model.Reservation;
 import christmas.model.event.Event;
 import christmas.utils.BeveragesMenuInfo;
-import christmas.utils.DiscountConstants;
 import christmas.utils.EventInfo;
 import christmas.utils.PlannerNumber;
 
 public class GiftEvent implements Event {
-    private final int discount = DiscountConstants.DISCOUNT_NONE.getIndex();
+    private final int discount = BeveragesMenuInfo.CHAMPAGNE.getPrice();
     private static final String GIFT_ID = BeveragesMenuInfo.CHAMPAGNE.getMessage();
 
     @Override

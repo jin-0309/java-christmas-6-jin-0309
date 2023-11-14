@@ -2,8 +2,9 @@ package christmas.view;
 
 import christmas.model.Menu;
 import christmas.model.Reservation;
-import christmas.model.event.Event;
+import christmas.model.event.impl.BadgeEvent;
 import christmas.utils.PlannerMessage;
+import christmas.utils.PlannerNumber;
 import java.text.DecimalFormat;
 
 public class OutputView {
@@ -45,14 +46,24 @@ public class OutputView {
 
     public void printBenefitHistory(Reservation reservation) {
         System.out.println(PlannerMessage.BENEFIT_HISTORY.getMessage());
-        if (reservation.getEvents() == null) {
-            System.out.println(PlannerMessage.NONE.getMessage());
+        if (reservation.getEvents() == null || reservation.getTotalDiscount() == PlannerNumber.ZERO.getNumber()) {
+            System.out.println(PlannerMessage.NONE.getMessage() + PlannerMessage.NEWLINE.getMessage());
+            return;
         }
-        for (Event event : reservation.getEvents()) {
-            System.out.println(event.getEventName() + PlannerMessage.COLON.getMessage() + converterMoney(
-                    Math.negateExact(event.getDiscount())));
-        }
+        reservation.getEvents().stream()
+                .filter(event -> !(event instanceof BadgeEvent)).forEach(
+                        event -> System.out.println(event.getEventName() + PlannerMessage.COLON.getMessage() + converterMoney(
+                                Math.negateExact(event.getDiscount()))));
         System.out.println();
+    }
+
+    public void printTotalBenefitPrice(Reservation reservation) {
+        System.out.println(PlannerMessage.TOTAL_BENEFIT_AMOUNT.getMessage());
+        if (reservation.getTotalDiscount() == PlannerNumber.ZERO.getNumber()) {
+            System.out.println(PlannerMessage.NONE.getMessage() + PlannerMessage.NEWLINE.getMessage());
+            return;
+        }
+        System.out.println(converterMoney(Math.negateExact(reservation.getTotalDiscount())) + PlannerMessage.NEWLINE);
     }
 
     public String converterMoney(int price) {
