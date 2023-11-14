@@ -31,4 +31,8 @@ public class Reservation {
     public int getTotalPrice() {
         return this.order.getTotalPrice();
     }
+
+    public void addEvent(Event event) {
+        this.events.add(event);
+    }
 }

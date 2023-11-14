@@ -32,4 +32,8 @@ public class BadgeEvent implements Event {
     public int getDiscount() {
         return this.discount;
     }
+
+    public Badge getBadge() {
+        return this.badge;
+    }
 }

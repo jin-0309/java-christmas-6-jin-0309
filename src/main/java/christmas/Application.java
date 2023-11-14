@@ -8,6 +8,7 @@ public class Application {
         // TODO: 프로그램 구현
         AppConfig appConfig = new AppConfig();
         appConfig.menuInit();
+        appConfig.eventInit();
         WootecoRestaurantController wootecoRestaurantController = appConfig.getController();
         wootecoRestaurantController.run();
     }

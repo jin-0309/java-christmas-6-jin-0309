@@ -1,9 +1,16 @@
 package christmas.config;
 
 import christmas.controller.WootecoRestaurantController;
+import christmas.model.event.impl.BadgeEvent;
+import christmas.model.event.impl.DayByDayEvent;
+import christmas.model.event.impl.GiftEvent;
+import christmas.model.event.impl.StarDayEvent;
+import christmas.model.event.impl.WeekDayEvent;
+import christmas.model.event.impl.WeekendEvent;
 import christmas.repository.MenuRepository;
 import christmas.repository.ReservationRepository;
 import christmas.repository.UserRepository;
+import christmas.service.EventManager;
 import christmas.service.MenuService;
 import christmas.service.OrderService;
 import christmas.service.ReservationService;
@@ -25,11 +32,14 @@ public class AppConfig {
 
     private final OrderService orderService;
 
+    private final EventManager eventManager;
+
     public AppConfig() {
         this.menuService = new MenuService(MenuRepository.getInstance());
         this.reservationService = new ReservationService(ReservationRepository.getInstance());
         this.userService = new UserService(UserRepository.getInstance());
         this.orderService = new OrderService(this.menuService);
+        this.eventManager = new EventManager();
     }
 
     public WootecoRestaurantController getController() {
@@ -69,6 +79,15 @@ public class AppConfig {
             menuService.createMenu(beverages.getMessage(), beverages.getPrice(),
                     MenuCategoryInfo.BEVERAGES.getMessage());
         }
+    }
+
+    public void eventInit() {
+        this.eventManager.addEvent(new BadgeEvent());
+        this.eventManager.addEvent(new DayByDayEvent());
+        this.eventManager.addEvent(new GiftEvent());
+        this.eventManager.addEvent(new StarDayEvent());
+        this.eventManager.addEvent(new WeekendEvent());
+        this.eventManager.addEvent(new WeekDayEvent());
     }
 
 }
