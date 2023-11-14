@@ -8,14 +8,14 @@
 # 기능목록
 
 - [x] 프로그램 시작 시 식당 메뉴를 초기화 합니다.
-    - [x] 에피타이저
-        - 양송이수프(6,000), 타파스(5,500), 시저샐러드(8,000)
-    - [x] 메인
-        - 티본스테이크(55,000), 바비큐립(54,000), 해산물파스타(35,000), 크리스마스파스타(25,000)
-    - [x] 디저트
-        - 초코케이크(15,000), 아이스크림(5,000)
-    - [x] 음료
-        - 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
+- [x] 에피타이저
+    - 양송이수프(6,000), 타파스(5,500), 시저샐러드(8,000)
+- [x] 메인
+    - 티본스테이크(55,000), 바비큐립(54,000), 해산물파스타(35,000), 크리스마스파스타(25,000)
+- [x] 디저트
+    - 초코케이크(15,000), 아이스크림(5,000)
+- [x] 음료
+    - 제로콜라(3,000), 레드와인(60,000), 샴페인(25,000)
 - [x] 사용자에게 식당 예상 방문 날짜 입력 받습니다.
     - 방문할 날짜는 1 이상 31 이하의 숫자로만 입력 받습니다.
     - 1 이상 31 이하의 숫자가 아닐 경우 "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요." 라는 에러 메시지가 출력됩니다.
@@ -65,98 +65,98 @@
 ## 패키지 구조
 
 <table>
-  <tr>
-    <td>패키지</td>
-    <td>클래스</td>
-    <td>설명</td>
-  </tr>
-  <tr>
-    <td>controller</td>
-    <td>WootecoRestaurantController</td>
-    <td>우테코 레스토랑 컨트롤러 입니다. 뷰와 모델을 연결합니다.</td>
-  </tr>
-  <tr>
-    <td rowspan="5">model</td>
-    <td>User</td>
-    <td>사용자 record 입니다.</td>
-  </tr>
-  <tr>
-    <td>Menu</td>
-    <td>메뉴 record 입니다.</td>
-  </tr>
-  <tr>
-    <td>EventPlanner</td>
-    <td>이벤트 플래너 클래스 입니다.</td>
-  </tr>
-  <tr>
-    <td>Reservation</td>
-    <td>예약 record 입니다.</td>
-  </tr>
+    <tr>
+        <td>패키지</td>
+        <td>클래스</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>controller</td>
+        <td>WootecoRestaurantController</td>
+        <td>우테코 레스토랑 컨트롤러 입니다. 뷰와 모델을 연결합니다.</td>
+    </tr>
+    <tr>
+        <td rowspan="5">model</td>
+        <td>User</td>
+        <td>사용자 record 입니다.</td>
+    </tr>
+    <tr>
+        <td>Menu</td>
+        <td>메뉴 record 입니다.</td>
+    </tr>
+    <tr>
+        <td>EventPlanner</td>
+        <td>이벤트 플래너 클래스 입니다.</td>
+    </tr>
+    <tr>
+        <td>Reservation</td>
+        <td>예약 record 입니다.</td>
+    </tr>
     <tr>
         <td>Order</td>
         <td>주문 정보 클래스 입니다.</td>
     </tr>
-  <tr>
-    <td>model.event</td>
-    <td>Event</td>
-    <td>이벤트 interface 입니다.</td>
-  </tr>
-  <tr>
-    <td rowspan="3">model.event.impl</td>
-    <td>WeekendEvent</td>
-    <td>주말 할인 이벤트 입니다.</td>
-  </tr>
-  <tr>
-    <td>WeekDayEvent</td>
-    <td>평일 할인 이벤트 입니다.</td>
-  </tr>
-  <tr>
-    <td>StarDayEvent</td>
-    <td>별이 달린 날짜 이벤트 입니다.</td>
-  </tr>
-  <tr>
-    <td rowspan="3">repository</td>
-    <td>UserRepository</td>
-    <td>유저 repository 입니다.</td>
-  </tr>
-  <tr>
-    <td>MenuRepository</td>
-    <td>메뉴 repository 입니다.</td>
-  </tr>
-  <tr>
-    <td>ReservationRepository</td>
-    <td>예약 repository 입니다.</td>
-  </tr>
-  <tr>
-    <td rowspan="4">service</td>
-    <td>ReservationService</td>
-    <td>예약 service 입니다.</td>
-  </tr>
-  <tr>
-    <td>MenuService</td>
-    <td>메뉴 service 입니다.</td>
-  </tr>
-  <tr>
-    <td>UserService</td>
-    <td>유저 service 입니다.</td>
-  </tr>
-    <td>OrderService</td>
-    <td>주문 service 입니다.</td>
-  <tr>
-    <td rowspan="2">view</td>
-    <td>InputView</td>
-    <td>입력 처리를 진행 하는 view 입니다.</td>
-  </tr>
-  <tr>
-    <td>OutputView</td>
-    <td>출력 처리를 진행 하는 view 입니다.</td>
-  </tr>
-  <tr>
-    <td rowspan="7">utils</td>
-    <td>MenuCategoryInfo</td>
-    <td>메뉴 들의 정보를 담고 있는 enum 입니다.</td>
-  </tr>
-  <tr>
+    <tr>
+        <td>model.event</td>
+        <td>Event</td>
+        <td>이벤트 interface 입니다.</td>
+    </tr>
+    <tr>
+        <td rowspan="3">model.event.impl</td>
+        <td>WeekendEvent</td>
+        <td>주말 할인 이벤트 입니다.</td>
+    </tr>
+    <tr>
+        <td>WeekDayEvent</td>
+        <td>평일 할인 이벤트 입니다.</td>
+    </tr>
+    <tr>
+        <td>StarDayEvent</td>
+        <td>별이 달린 날짜 이벤트 입니다.</td>
+    </tr>
+    <tr>
+        <td rowspan="3">repository</td>
+        <td>UserRepository</td>
+        <td>유저 repository 입니다.</td>
+    </tr>
+    <tr>
+        <td>MenuRepository</td>
+        <td>메뉴 repository 입니다.</td>
+    </tr>
+    <tr>
+        <td>ReservationRepository</td>
+        <td>예약 repository 입니다.</td>
+    </tr>
+    <tr>
+        <td rowspan="4">service</td>
+        <td>ReservationService</td>
+        <td>예약 service 입니다.</td>
+    </tr>
+    <tr>
+        <td>MenuService</td>
+        <td>메뉴 service 입니다.</td>
+    </tr>
+    <tr>
+        <td>UserService</td>
+        <td>유저 service 입니다.</td>
+    </tr>
+        <td>OrderService</td>
+        <td>주문 service 입니다.</td>
+    <tr>
+        <td rowspan="2">view</td>
+        <td>InputView</td>
+        <td>입력 처리를 진행 하는 view 입니다.</td>
+    </tr>
+    <tr>
+        <td>OutputView</td>
+        <td>출력 처리를 진행 하는 view 입니다.</td>
+    </tr>
+    <tr>
+        <td rowspan="7">utils</td>
+        <td>MenuCategoryInfo</td>
+        <td>메뉴 들의 정보를 담고 있는 enum 입니다.</td>
+    </tr>
+    <tr>
         <td>AppetizerMenuInfo</td>
         <td>에피타이저 메뉴 정보를 담고 있는 enum 입니다.</td>
     </tr>

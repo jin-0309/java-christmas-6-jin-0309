@@ -34,11 +34,25 @@ public class OrderService {
     }
 
     public int validateQuantity(String inputQuantity) {
-        int quantity = Integer.parseInt(inputQuantity);
-        if (quantity < OrderConstants.QUANTITY_MIN.getIndex()) {
+        int quantity = validateNumber(inputQuantity);
+        validateMinQuantity(quantity);
+        return quantity;
+    }
+
+    public int validateNumber(String inputQuantity) {
+        int quantity;
+        try {
+            quantity = Integer.parseInt(inputQuantity);
+        } catch (NumberFormatException e) {
             throw new InvalidOrderException();
         }
         return quantity;
+    }
+
+    public void validateMinQuantity(int quantity) {
+        if (quantity < OrderConstants.QUANTITY_MIN.getIndex()) {
+            throw new InvalidOrderException();
+        }
     }
 
     public void validatePattern(String input) {

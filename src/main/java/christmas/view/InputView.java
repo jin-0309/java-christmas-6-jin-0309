@@ -1,7 +1,7 @@
 package christmas.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import christmas.exception.InvalidNumberInputException;
+import christmas.exception.InvalidDateException;
 import christmas.utils.PlannerMessage;
 
 public class InputView {
@@ -21,7 +21,7 @@ public class InputView {
         try {
             number = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new InvalidNumberInputException();
+            throw new InvalidDateException();
         }
         return number;
     }
