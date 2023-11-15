@@ -59,7 +59,7 @@ public class OrderService {
         Pattern pattern = Pattern.compile(OrderConstants.ORDER_PATTERN.getValue());
         Matcher matcher = pattern.matcher(input);
 
-        if (matcher.matches()) {
+        if (!matcher.matches()) {
             throw new InvalidOrderException();
         }
     }
