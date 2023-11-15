@@ -25,7 +25,7 @@ public class Order {
     }
 
     public int getTotalPrice() {
-        return this.orders.entrySet().stream().mapToInt(entry -> entry.getKey().getPrice() * entry.getValue()).sum();
+        return this.orders.entrySet().stream().mapToInt(entry -> entry.getKey().price() * entry.getValue()).sum();
     }
 
     public Map<Menu, Integer> getOrders() {
@@ -33,7 +33,7 @@ public class Order {
     }
 
     public List<String> getCategory() {
-        return orders.keySet().stream().map(Menu::getCategory).toList();
+        return orders.keySet().stream().map(Menu::category).toList();
     }
 
     public int getAllQuantity() {
