@@ -3,7 +3,6 @@ package christmas.model;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Order {
 
@@ -34,7 +33,7 @@ public class Order {
     }
 
     public List<String> getCategory() {
-        return orders.keySet().stream().map(Menu::getCategory).collect(Collectors.toList());
+        return orders.keySet().stream().map(Menu::getCategory).toList();
     }
 
     public int getAllQuantity() {
