@@ -51,10 +51,9 @@ public class OutputView {
             System.out.println(PlannerMessage.NONE.getMessage() + PlannerMessage.NEWLINE.getMessage());
             return;
         }
-        reservation.getEvents().stream()
-                .filter(event -> !(event instanceof BadgeEvent)).forEach(
-                        event -> System.out.println(event.getEventName() + PlannerMessage.COLON.getMessage() + converterMoney(
-                                Math.negateExact(event.getDiscount()))));
+        reservation.getEvents().stream().filter(event -> !(event instanceof BadgeEvent)).forEach(
+                event -> System.out.println(event.getEventName() + PlannerMessage.COLON.getMessage() + converterMoney(
+                        Math.negateExact(event.getDiscount()))));
         System.out.println();
     }
 

@@ -22,16 +22,11 @@ public class Order {
     }
 
     public int getCountByCategory(String category) {
-        return orders.keySet().stream()
-                .filter(menu -> category.equals(menu.category()))
-                .mapToInt(orders::get)
-                .sum();
+        return orders.keySet().stream().filter(menu -> category.equals(menu.category())).mapToInt(orders::get).sum();
     }
 
     public int getTotalPrice() {
-        return this.orders.entrySet().stream()
-                .mapToInt(entry -> entry.getKey().getPrice() * entry.getValue())
-                .sum();
+        return this.orders.entrySet().stream().mapToInt(entry -> entry.getKey().getPrice() * entry.getValue()).sum();
     }
 
     public Map<Menu, Integer> getOrders() {
@@ -39,9 +34,7 @@ public class Order {
     }
 
     public List<String> getCategory() {
-        return orders.keySet().stream()
-                .map(Menu::getCategory)
-                .collect(Collectors.toList());
+        return orders.keySet().stream().map(Menu::getCategory).collect(Collectors.toList());
     }
 
     public int getAllQuantity() {

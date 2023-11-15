@@ -47,8 +47,7 @@ public class AppConfig {
 
     public WootecoRestaurantController getController() {
         return new WootecoRestaurantController(menuService, userService, reservationService, orderService, eventManager,
-                new InputView(),
-                new OutputView());
+                new InputView(), new OutputView());
     }
 
     public void menuInit() {

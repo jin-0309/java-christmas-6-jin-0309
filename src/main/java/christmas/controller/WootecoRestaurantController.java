@@ -82,7 +82,8 @@ public class WootecoRestaurantController {
             user.setBadge(
                     reservation.getEvents().stream().filter(BadgeEvent.class::isInstance).map(BadgeEvent.class::cast)
                             .findFirst().orElseThrow(() -> new IllegalStateException(
-                                    ExceptionMessage.ERROR_PREFIX.getMessage() + ExceptionMessage.ILLEGAL_STATE.getMessage()))
+                                    ExceptionMessage.ERROR_PREFIX.getMessage()
+                                            + ExceptionMessage.ILLEGAL_STATE.getMessage()))
                             .getBadge());
         }
     }

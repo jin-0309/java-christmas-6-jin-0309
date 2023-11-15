@@ -57,9 +57,7 @@ public class Reservation {
     }
 
     public int getTotalDiscount() {
-        return events.stream()
-                .mapToInt(Event::getDiscount)
-                .sum();
+        return events.stream().mapToInt(Event::getDiscount).sum();
     }
 
 }
